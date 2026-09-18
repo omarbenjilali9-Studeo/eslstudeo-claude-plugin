@@ -1,0 +1,20 @@
+{
+  "name": "eslstudeo",
+  "owner": {
+    "name": "ESLStudeo"
+  },
+  "metadata": {
+    "description": "The ESLStudeo plugin for Claude: build courses and run classes in ESLStudeo by talking to Claude."
+  },
+  "plugins": [
+    {
+      "name": "eslstudeo",
+      "displayName": "ESLStudeo",
+      "source": "./plugins/eslstudeo",
+      "description": "Build courses and run classes in ESLStudeo by talking to Claude. Plan and write units, pages and exercises; find and change wording across a course; check a course's quality; see how a class is getting on; and send a notice to the learners who need one. Includes the ESLStudeo connector, which you approve on eslstudeo.com.",
+      "category": "education",
+      "homepage": "https://eslstudeo.com",
+      "keywords": ["courses", "teaching", "classes", "course builder", "learning", "education"]
+    }
+  ]
+}

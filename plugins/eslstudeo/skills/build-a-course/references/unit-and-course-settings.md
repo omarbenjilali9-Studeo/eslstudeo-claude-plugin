@@ -1,0 +1,43 @@
+# Unit and course settings
+
+The exact names and ranges come from `what_can_this_builder_do` (parts "delivery" and "course").
+This file says which to choose.
+
+## How a unit is delivered (`set_unit_delivery`)
+
+| The unit is | Settings |
+|---|---|
+| Practice (the usual case) | `feedback` "check" (results as learners go), `attempts` 0 (as often as they like), `mode` "free" |
+| A lesson to follow in order | `mode` "sequence"; add `lockBack` 1 only if going back would spoil the task |
+| Homework | `feedback` "check" or "end". The deadline is set for each class in ESLStudeo, not here |
+| A test or an exam | `exam` 1 (one sitting; the score goes to the Exam column), `feedback` "end" or "none", `timeLimitMin` if it is timed, usually `mode` "sequence" |
+| A diagnostic ("Where are you now?") | An untagged unit (no word, no number), `feedback` "none" (the work is recorded and no score is shown), `attempts` 1 |
+| Outside the grades | `grading` "none" (it still counts for Handed in) |
+
+- `adaptive` 1 folds away the rest of an exercise's easy items once a learner is clearly on top of
+  it. It suits long practice units, and it is ignored when `feedback` is "none".
+- `requiresPrev` 1 keeps a unit locked until the previous unit is finished.
+- A class, or a single learner, can be given a different number of attempts in ESLStudeo. That
+  number wins over the unit's setting.
+- Leave `opensAt` and `deadline` off. Dates set on a class override them, and each class runs on its
+  own calendar.
+
+## The course as a whole (`set_course_settings`)
+
+- `unitWord`: what every unit is called (Unit, Week, Lesson, Module, Chapter). An empty word removes
+  it. A single unit can instead be left untagged with `update_unit`, for an introduction or a
+  diagnostic; the units after it keep counting.
+- `landing`: the course's home page. `eyebrow` is the small line above the title, `headline` the
+  headline, `subhead` the sentence beneath it, `cue` the nudge at the foot (for example "Start with
+  Unit 1 ↓"), and `heroPhoto` the picture across the top, uploaded first.
+- `theme`: the background.
+- `certificate`: released when its conditions are met: `requireCompletion`, `minScore` and
+  `minCoverage` (percentages), `scoreScope` ("quiz" for every unit with questions, "exam" for the
+  exam units only), `title`, `subtitle`, and `email` to send it out. At least one condition is
+  required. A class's teacher can replace the conditions for their own class.
+
+## Sections
+
+A section holds units. Split a section into a Student Book and a Workbook (`add_section` with
+`split` set to true) when every lesson has matching homework. Each unit then goes into `book`
+"student" or "workbook".
