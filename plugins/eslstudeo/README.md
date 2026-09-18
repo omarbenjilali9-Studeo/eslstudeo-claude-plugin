@@ -4,17 +4,22 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 34 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 51 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
-- **Five skills.** A skill is a set of instructions that Claude reads when a task needs it.
+- **Six skills.** A skill is a set of instructions that Claude reads when a task needs it.
   - **build-a-course**: plans and builds courses, units, pages and exercises in the ESLStudeo house
     style.
   - **edit-a-course**: finds and changes wording, renames, moves, copies, hides, removes, and undoes
     changes.
   - **review-a-course**: checks a course's quality page by page and proposes exact fixes.
-  - **run-a-class**: creates classes, reports how a class is getting on, finds who has not done what,
-    and sends learners a notice inside ESLStudeo.
+  - **run-a-class**: creates and changes classes; sets a class's unit dates, access, attempts and
+    exam resits; adds, moves or removes learners; reports how a class and each learner are getting
+    on; finds who has or has not done something; and writes to learners with a notice inside
+    ESLStudeo, or with email drafts in your own email.
+  - **mark-and-reply**: proposes marks and feedback from each question's criteria and saves the ones
+    you confirm; answers discussion posts, hides or pins them; reads and answers what learners write
+    with **Message my teacher**.
   - **connect-eslstudeo**: connecting, the four permissions, what is shared, and ending the connection.
 
 ## Install
@@ -26,8 +31,8 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 3. If you had already added ESLStudeo as a connector by hand, remove that one, so that only one
    ESLStudeo connection remains.
 
-Then ask, for example: "Make a six-unit course for my Saturday group" or "Who hasn't finished
-Unit 2?". You can also type `/` to pick a skill by name.
+Then ask, for example: "Make a six-unit course for my Saturday group", "Who hasn't finished
+Unit 2?", "Give Sara a resit of the mid-term" or "Mark the welcome emails from Unit 2". You can also type `/` to pick a skill by name.
 
 ## The four permissions
 
@@ -35,12 +40,14 @@ Unit 2?". You can also type `/` to pick a skill by name.
 |---|---|---|
 | See courses | Read the courses you may edit, and everything written in them | When you press Allow |
 | Change courses | Create courses; write sections, units, pages and exercises; upload pictures and documents | When you press Allow |
-| See classes and learners | Read your classes and learners: names, marks, what each learner has and has not done, and email addresses where they exist | Only if you switch on **Also let it into your classes** |
-| Act in classes | Create classes, and send learners notices inside ESLStudeo | Only if you switch on **Also let it into your classes** |
+| See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist | Only if you switch on **Also let it into your classes** |
+| Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo | Only if you switch on **Also let it into your classes** |
 
-Claude acts only as you, and only in courses and classes you can already reach in ESLStudeo. Deleting,
-replacing text across a course and restoring an earlier version each need your explicit yes.
-ESLStudeo sends no email on your behalf.
+Claude acts only as you, and only in courses and classes you can already reach in ESLStudeo, under
+the same rules as ESLStudeo's own screens. Deleting, replacing text across a course, restoring an
+earlier version, ending a class and removing a learner each need your explicit yes. ESLStudeo sends
+no email on your behalf; if your email is connected to Claude, Claude can save drafts in it for you to
+check and send.
 
 ESLStudeo labels every tool as reading or changing, so Claude's **Tool permissions** page
 (**Customize → Connectors → ESLStudeo**) groups them. You can, for example, let the reading tools run
@@ -51,8 +58,8 @@ without asking and make every change ask first.
 Whatever Claude reads from ESLStudeo is sent to Anthropic and handled under Anthropic's terms. With the
 class permissions, this includes your learners' names, marks and email addresses. To build courses
 without sharing any learner information, leave **Also let it into your classes** off. On a connection
-that already has it, you can instead set the seven class tools to **Blocked** in
-**Customize → Connectors → ESLStudeo → Tool permissions**.
+that already has it, you can connect again with the switch off, or set the 24 class tools to
+**Blocked** in **Customize → Connectors → ESLStudeo → Tool permissions**.
 
 ## Ending the connection
 

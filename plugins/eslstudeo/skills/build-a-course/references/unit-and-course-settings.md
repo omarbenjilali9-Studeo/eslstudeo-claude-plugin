@@ -17,10 +17,11 @@ This file says which to choose.
 - `adaptive` 1 folds away the rest of an exercise's easy items once a learner is clearly on top of
   it. It suits long practice units, and it is ignored when `feedback` is "none".
 - `requiresPrev` 1 keeps a unit locked until the previous unit is finished.
-- A class, or a single learner, can be given a different number of attempts in ESLStudeo. That
-  number wins over the unit's setting.
+- A class, or a single learner, can be given a different number of attempts, and a learner who has
+  sat an exam can be given a resit (`set_unit_access`, in the run-a-class skill). That number wins
+  over the unit's setting.
 - Leave `opensAt` and `deadline` off. Dates set on a class override them, and each class runs on its
-  own calendar.
+  own calendar (`set_unit_dates`, in the run-a-class skill).
 
 ## The course as a whole (`set_course_settings`)
 

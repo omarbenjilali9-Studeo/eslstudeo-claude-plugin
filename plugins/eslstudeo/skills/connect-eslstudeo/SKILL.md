@@ -42,18 +42,23 @@ into your classes**. Each permission unlocks a fixed set of tools.
 |---|---|---|
 | See courses (`courses:read`) | Read the courses the person may edit, and everything written in them | `what_can_this_builder_do`, `list_my_courses`, `read_course`, `read_unit`, `read_page`, `find_in_course`, `list_versions`, `check_course` |
 | Change courses (`courses:write`) | Create courses; write sections, units, pages and exercises; upload pictures and documents | `create_course`, `update_course`, `set_course_settings`, `add_section`, `update_section`, `add_unit`, `update_unit`, `set_unit_delivery`, `add_page`, `update_page`, `set_exercises`, `set_marking_guidance`, `move_item`, `duplicate_item`, `delete_item`, `replace_text`, `restore_version`, `upload_image`, `upload_file` |
-| See classes and learners (`students:read`) | Read the person's classes and learners: names, marks, what each learner has and has not done, and email addresses where they exist | `list_classes`, `class_roster`, `class_progress`, `find_students`, `discussion_status` |
-| Act in classes (`students:write`) | Create classes, and send learners notices inside ESLStudeo | `create_class`, `send_notice` |
+| See classes and learners (`students:read`) | Read the person's classes and learners: names, marks, written work and messages, what each learner has and has not done, who may open which unit, and email addresses where they exist | `list_classes`, `class_details`, `class_roster`, `class_progress`, `find_students`, `learner_record`, `unit_access`, `work_to_mark`, `discussion_status`, `learner_messages` |
+| Run classes (`students:write`) | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo | `create_class`, `update_class`, `end_class`, `reopen_class`, `set_unit_dates`, `set_unit_access`, `manage_learner`, `set_read_aloud`, `mark_work`, `reply_to_post`, `moderate_post`, `send_notice`, `announce_to_class`, `reply_to_learner` |
 
 Limits that no permission lifts:
 - Only courses the person may already edit. A co-author with "propose" access writes proposals that
   wait for the course owner; `list_my_courses` says which courses work that way. A course licensed
   to an organization can be taught but not edited.
 - Only classes the person may see in ESLStudeo: a teacher sees their own classes; the heads of an
-  organization see its classes.
+  organization see its classes. The rules of ESLStudeo's own screens apply unchanged: a resit only
+  for a learner who has sat the exam, an end date for every class, and so on.
+- New learner accounts and passwords are made in ESLStudeo itself, never through the connector.
 - Every change is recorded in ESLStudeo as made through the connector, by that person.
-- ESLStudeo never sends email on anyone's behalf. Notices appear inside ESLStudeo.
-- A whole course cannot be deleted through the connector; that is done in ESLStudeo itself.
+- ESLStudeo never sends email on anyone's behalf. Notices appear inside ESLStudeo. When the person
+  wants email, Claude writes drafts in the person's own email, if it is connected (the run-a-class
+  skill).
+- A whole course cannot be deleted through the connector; that is done in ESLStudeo itself. A class
+  is ended with `end_class`, which keeps its records; it is never deleted through the connector.
 
 ## 3. What leaves ESLStudeo
 
@@ -63,14 +68,16 @@ State this plainly the first time the person asks for learner information, and r
 
 - To build courses without Claude seeing any learner information, the person leaves **Also let it
   into your classes** off on the ESLStudeo page. On a connection that already has the class
-  permissions, they can instead set the seven class tools (`list_classes`, `class_roster`,
-  `class_progress`, `find_students`, `discussion_status`, `create_class`, `send_notice`) to
-  **Blocked** in **Customize → Connectors → ESLStudeo → Tool permissions**.
+  permissions, the simplest way is to disconnect and connect again with the switch off. Blocking also
+  works: set every tool listed under the two class permissions in the table above to **Blocked** in
+  **Customize → Connectors → ESLStudeo → Tool permissions**.
 - ESLStudeo labels each tool as reading or changing, so Claude's **Tool permissions** page groups
   them. Each group, or each tool, can be set to **Always allow**, **Needs approval** or **Blocked**.
   A sensible setting is **Always allow** for the reading tools and **Needs approval** for the
   changing ones; at the least, suggest **Needs approval** for `delete_item`, `restore_version`,
-  `replace_text` and `send_notice` if the person wants Claude to stop and ask before those run.
+  `replace_text`, `end_class` and `manage_learner`, and for the tools that reach learners
+  (`send_notice`, `announce_to_class`, `mark_work`, `reply_to_post`, `reply_to_learner`), if the
+  person wants Claude to stop and ask before those run.
 
 ## 4. Ending the connection
 

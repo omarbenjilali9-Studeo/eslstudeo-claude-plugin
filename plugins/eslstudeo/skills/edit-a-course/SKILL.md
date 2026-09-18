@@ -32,7 +32,7 @@ If the ESLStudeo tools are missing, follow the connect-eslstudeo skill first.
 | Remove something | `delete_item` | Learners' work on it is lost: ask first |
 | Undo | `list_versions`, then `restore_version` | Everything since that version is undone; the version replaced is kept |
 | Change how an open question is marked | `set_marking_guidance` | Out of what, criteria, bands, a model answer |
-| Change attempts, order, results or exam mode | `set_unit_delivery` | Dates belong to classes, not to the course |
+| Change attempts, order, results or exam mode | `set_unit_delivery` | For every class. Dates, and exceptions for one class or learner, belong to the class: `set_unit_dates` and `set_unit_access` (run-a-class) |
 | Change the unit word, home page or certificate | `set_course_settings` | |
 
 ## Three changes need the person's explicit yes

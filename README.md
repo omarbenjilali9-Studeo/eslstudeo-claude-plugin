@@ -9,15 +9,21 @@ With the plugin, Claude can:
 - find and change wording across a course, rename, reorder, copy, hide and remove things, and put a
   course back to an earlier version;
 - review a course's quality page by page and propose exact fixes;
-- tell you how a class is getting on, find the learners who have not done something, and send them a
-  notice inside ESLStudeo.
+- run your classes: change a class's name, dates and settings, open or close units for some learners
+  or the whole class, set attempts and exam resits, and add, move or remove learners;
+- tell you how a class and each learner are getting on, and find the learners who have or have not
+  done something;
+- propose marks and feedback from each question's own criteria, and save the ones you confirm;
+- answer discussion posts and what learners write to you with **Message my teacher**;
+- write to learners: a notice inside ESLStudeo, which reaches every learner, or, if your email is
+  connected to Claude, one email draft per learner for you to check and send.
 
 ## What it contains
 
 - **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). You approve it on an ESLStudeo page;
   your password never reaches Claude.
-- **Five skills**, the instructions Claude reads when a task needs them: `build-a-course`,
-  `edit-a-course`, `review-a-course`, `run-a-class` and `connect-eslstudeo`.
+- **Six skills**, the instructions Claude reads when a task needs them: `build-a-course`,
+  `edit-a-course`, `review-a-course`, `run-a-class`, `mark-and-reply` and `connect-eslstudeo`.
 
 The plugin itself is in [`plugins/eslstudeo`](plugins/eslstudeo).
 
@@ -46,12 +52,14 @@ You need an ESLStudeo account ([eslstudeo.com](https://eslstudeo.com)).
 |---|---|---|
 | See courses | Read the courses you may edit, and everything written in them | When you press Allow |
 | Change courses | Create courses; write sections, units, pages and exercises; upload pictures and documents | When you press Allow |
-| See classes and learners | Read your classes and learners: names, marks, what each learner has and has not done, and email addresses where they exist | Only if you switch on **Also let it into your classes** |
-| Act in classes | Create classes, and send learners notices inside ESLStudeo | Only if you switch on **Also let it into your classes** |
+| See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist | Only if you switch on **Also let it into your classes** |
+| Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo | Only if you switch on **Also let it into your classes** |
 
-- Claude acts only as you, and only in courses and classes you can already reach in ESLStudeo.
-- Deleting, replacing text across a course and restoring an earlier version each need your explicit
-  yes. ESLStudeo sends no email on your behalf.
+- Claude acts only as you, and only in courses and classes you can already reach in ESLStudeo, under
+  the same rules as ESLStudeo's own screens.
+- Deleting, replacing text across a course, restoring an earlier version, ending a class and removing
+  a learner each need your explicit yes. Claude shows you what it will write before anything reaches
+  a learner. ESLStudeo sends no email on your behalf.
 - Every tool is labelled as reading or changing, so Claude's Tool permissions page can, for example,
   let reads run freely while every change asks first.
 - Whatever Claude reads from ESLStudeo is sent to Anthropic and handled under Anthropic's terms. With
