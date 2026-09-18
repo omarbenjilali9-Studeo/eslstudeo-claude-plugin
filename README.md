@@ -24,12 +24,13 @@ The plugin itself is in [`plugins/eslstudeo`](plugins/eslstudeo).
 ## Install
 
 **In Claude (web or desktop):** Customize → Plugins → Add → **Add marketplace**, and paste this
-repository's address. Then install **ESLStudeo** from the list.
+repository's address, `https://github.com/omarbenjilali9-Studeo/eslstudeo-claude-plugin`. Then
+install **ESLStudeo** from the list.
 
 **In Claude Code:**
 
 ```
-/plugin marketplace add omarbenjilali9-Studeo/eslstudeo-claude-plugin
+/plugin marketplace add https://github.com/omarbenjilali9-Studeo/eslstudeo-claude-plugin.git
 /plugin install eslstudeo@eslstudeo
 ```
 
