@@ -7,6 +7,8 @@ With the plugin, Claude can:
 - design a course with Claude as an expert colleague: it asks the questions that change the design,
   recommends an approach, agrees an outline with you, then builds one unit at a time, in small steps
   you can see in ESLStudeo as it grows;
+- teach a class that holds several levels from one course: an easy layer and a challenge layer beside
+  the core path, served to each learner by what they get right;
 - turn a paper placement test (photos or a document) into an online one — it works out the settings
   that reproduce your test and asks you to approve them — following the rules that keep a level
   trustworthy, and send each candidate their own single-use link, with an email draft per

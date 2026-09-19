@@ -1,8 +1,8 @@
 {
   "name": "eslstudeo",
   "displayName": "ESLStudeo",
-  "version": "1.4.0",
-  "description": "Build courses, placement tests and classes in ESLStudeo by talking to Claude. Claude works as an expert in curriculum design and assessment: it asks the questions that change the design, recommends an approach, agrees an outline with you, then builds unit by unit. Plan and write units, pages and exercises; turn a paper placement test into an online one and send each candidate their own link; find and change wording across a course; check a course's quality; set a class's dates, access, attempts and exam resits; add or move learners; see how a class is getting on; mark written work; answer posts and messages; bring in pictures, recordings and videos from Google Drive; and write to the people who need it, with a notice or email drafts. Includes the ESLStudeo connector, which you approve on eslstudeo.com.",
+  "version": "1.5.0",
+  "description": "Build courses, placement tests and classes in ESLStudeo by talking to Claude. Claude works as an expert in curriculum design and assessment: it asks the questions that change the design, recommends an approach, agrees an outline with you, then builds unit by unit. Plan and write units, pages and exercises, with an easy and a challenge layer for a class of several levels; turn a paper placement test into an online one and send each candidate their own link; find and change wording across a course; check a course's quality; set a class's dates, access, attempts and exam resits; add or move learners; see how a class is getting on; mark written work; answer posts and messages; bring in pictures, recordings and videos from Google Drive; and write to the people who need it, with a notice or email drafts. Includes the ESLStudeo connector, which you approve on eslstudeo.com.",
   "author": {
     "name": "ESLStudeo",
     "url": "https://eslstudeo.com"

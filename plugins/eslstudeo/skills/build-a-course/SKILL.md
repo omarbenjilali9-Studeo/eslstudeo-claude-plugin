@@ -62,6 +62,11 @@ what the teacher may not have thought of: a short diagnostic in the first unit, 
 role-play, a project, a unit that brings earlier units back, a check halfway, a certificate, listening,
 pictures from their own Google Drive.
 
+When one class holds several levels — which the teacher will have told you — offer differentiation:
+the same unit carrying an easy layer and a challenge layer beside the core path, served by the platform
+to each learner on what they get right. It is off until it is switched on for a unit (see "One class,
+several levels" in `references/page-design.md`).
+
 The approaches are strong defaults, not rules. When the teacher wants their own shape, follow it fully.
 When they ask for something new or playful, be creative.
 

@@ -68,10 +68,26 @@ suggests to the teacher.
 - **A role-play** (`roleplay`) is a scripted exchange; `answerMode` is "type" or "record".
 - **A performance task** (`perform`) is judged live in class.
 
-## Mixed classes and teacher support
+## One class, several levels (differentiation)
 
-- `tier` on a page or a unit ("easy", "core" or "challenge") serves it only to those learners. Leave
-  it off for everyone.
+A `tier` of "easy", "core" or "challenge" can sit on a single exercise, on a page, or on a whole unit.
+The most precise one wins — exercise, then page, then unit — and anything untagged is core.
+
+- **Core** is served to everybody, and it is where the platform measures strength: the share right
+  across the core exercises that learner has answered in that unit, and nowhere else.
+- A learner who is strong sees the **easy** exercises they have not answered fold into an optional
+  card, which one tap reopens, and sees the **challenge** exercises appear with a quiet note.
+- Everybody else never sees the challenge work at all — never a locked teaser, because the screen
+  must not announce a learner's standing. Work already answered is never taken back.
+- None of it happens until the unit's `adaptive` setting is on (`set_unit_delivery`), and it never
+  runs on a unit that shows no feedback at all. Nobody assigns a learner a tier: the teacher tiers
+  the content, and the platform decides for each learner, in each unit.
+
+Offer it whenever a teacher describes a class of several levels: write the core path for the
+majority, an easy layer of extra recognition practice for those who need it, and a challenge layer
+that stretches the strongest — then switch it on for those units.
+
+## Teacher support
 - `teacherNotes` on a page hold the aim, the traps and the answers to watch for. Only staff see them.
   Write them wherever a teacher might wonder why a page is built as it is.
 - `linkTo` and `linkTo2` point to an earlier page the learner may need again; a button takes the

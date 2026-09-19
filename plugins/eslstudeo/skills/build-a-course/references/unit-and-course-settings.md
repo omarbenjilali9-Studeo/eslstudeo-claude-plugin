@@ -14,8 +14,11 @@ This file says which to choose.
 | A diagnostic ("Where are you now?") | An untagged unit (no word, no number), `feedback` "none" (the work is recorded and no score is shown), `attempts` 1 |
 | Outside the grades | `grading` "none" (it still counts for Handed in) |
 
-- `adaptive` 1 folds away the rest of an exercise's easy items once a learner is clearly on top of
-  it. It suits long practice units, and it is ignored when `feedback` is "none".
+- `adaptive` 1 switches differentiation on for the unit: the easy and challenge tiers start working,
+  measured on that unit's core exercises (`adaptiveThreshold`, the percentage right that counts as
+  strong, and `adaptiveMin`, how many core items must be answered first). Without it a tier does
+  nothing, and it never runs on a unit whose `feedback` is "none". See "One class, several levels"
+  in `references/page-design.md`.
 - `requiresPrev` 1 keeps a unit locked until the previous unit is finished.
 - A class, or a single learner, can be given a different number of attempts, and a learner who has
   sat an exam can be given a resit (`set_unit_access`, in the run-a-class skill). That number wins

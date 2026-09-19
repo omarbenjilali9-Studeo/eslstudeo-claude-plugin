@@ -42,6 +42,9 @@
 ## Settings
 - A test uses exam mode (one sitting), results at the end or none, and a time limit if it is timed.
 - A diagnostic is untagged and silent (`feedback` "none").
+- A course written for a class of several levels either tiers its exercises and switches `adaptive`
+  on for those units, or says why it does not; a tiered unit with the switch off serves everything to
+  everybody.
 - The course itself carries no term dates; dates belong to classes.
 - If a certificate is on, its conditions suit the course.
 

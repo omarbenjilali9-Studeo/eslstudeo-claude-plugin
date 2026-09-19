@@ -26,7 +26,7 @@ If the ESLStudeo tools are missing, follow the connect-eslstudeo skill first.
 | Rename the course, a section or a unit | `update_course`, `update_section`, `update_unit` | |
 | Hide a unit or a page from learners | `update_unit` with `hidden`, or `update_page` with `hidden` 1 | Staff still see it |
 | Take the word and number off a unit (an introduction, a diagnostic) | `update_unit` with `untagged` | The units after it renumber |
-| Serve a unit to some learners only | `update_unit` with `tier` | "easy", "core" or "challenge"; empty for everyone |
+| Tier a whole unit (differentiation) | `update_unit` with `tier` | "easy", "core" or "challenge"; empty for core. A page or a single exercise can carry its own, and no tier does anything until `set_unit_delivery` turns `adaptive` on |
 | Reorder | `move_item` | Positions count from 1; moving a unit renumbers the others |
 | Make a unit like an existing one | `duplicate_item`, then edit the copy | The copy gets new ids; learners' work stays with the original |
 | Remove something | `delete_item` | Learners' work on it is lost: ask first |
