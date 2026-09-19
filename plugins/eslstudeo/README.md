@@ -4,12 +4,13 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 64 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 65 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
 - **Seven skills.** A skill is a set of instructions that Claude reads when a task needs it.
-  - **build-a-course**: plans and builds courses, units, pages and exercises in the ESLStudeo house
-    style.
+  - **build-a-course**: designs and builds courses with you as an expert would — the questions that
+    change the design, a recommended approach, an outline you agree, then unit by unit in the
+    ESLStudeo house style.
   - **edit-a-course**: finds and changes wording, renames, moves, copies, hides, removes, and undoes
     changes.
   - **review-a-course**: checks a course's quality page by page and proposes exact fixes.
@@ -17,9 +18,11 @@ Build courses and run classes in ESLStudeo by talking to Claude.
     exam resits; adds, moves or removes learners; reports how a class and each learner are getting
     on; finds who has or has not done something; and writes to learners with a notice inside
     ESLStudeo, or with email drafts in your own email.
-  - **placement-tests**: builds placement tests from a paper test or a brief, following the rules that
-    keep a level trustworthy; creates one link per candidate for people far away, with email drafts;
-    reads the results and records the level you decide.
+  - **placement-tests**: puts your paper test online — it works out the settings that reproduce it and
+    asks you to approve them — or designs a new test with you, following the rules that keep a level
+    trustworthy; creates one link per candidate for people far away, each batch with its own time
+    limit, listening plays and support language, with email drafts; reads the results and records the
+    level you decide.
   - **mark-and-reply**: proposes marks and feedback from each question's criteria and saves the ones
     you confirm; answers discussion posts, hides or pins them; reads and answers what learners write
     with **Message my teacher**.
@@ -41,7 +44,7 @@ Unit 2?", "Give Sara a resit of the mid-term" or "Mark the welcome emails from U
 
 | Permission | What Claude may do | Granted |
 |---|---|---|
-| See courses | Read the courses and placement tests you may edit, and everything written in them | When you press Allow |
+| See courses | Read the courses and placement tests you may edit, everything written in them, and ESLStudeo’s design approaches | When you press Allow |
 | Change courses | Create courses and placement tests; write their sections, units, pages, exercises and questions; bring in pictures, documents, recordings and videos from a web address such as a Google Drive link | When you press Allow |
 | See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist; placement sittings and results | Only if you switch on **Also let it into your classes** |
 | Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo; create placement links and record levels | Only if you switch on **Also let it into your classes** |

@@ -1,6 +1,6 @@
 ---
 name: placement-tests
-description: Builds and delivers ESLStudeo placement tests through the ESLStudeo connector, by turning a paper test (photos or a document) or a brief into a placement test with parts, questions, levels and score rules that follow the measurement rules keeping a level trustworthy; publishing it; creating one single-use link per candidate for people taking it remotely, with an email draft per candidate in the teacher's own email; and reading the results and recording the level the teacher decides. Use this skill when the person asks about a placement test, a level test, a level check, a diagnostic or placing new students in ESLStudeo, for example "turn these photos of our paper test into a placement test", "make a placement test for adults from A1 to B2", "send the placement test to these twenty people", "who has finished the placement test?" or "place Sara at Intermediate".
+description: Builds and delivers ESLStudeo placement tests through the ESLStudeo connector — replicating a paper test (photos or a document) by proposing the settings that reproduce it for the teacher's approval, or designing a new test with them from the rules that keep a level trustworthy; publishing it; creating one single-use link per candidate for people taking it remotely, each batch with its own time limit, listening plays and support language, and an email draft per candidate in the teacher's own email; and reading the results and recording the level the teacher decides. Use this skill when the person asks about a placement test, a level test, a level check, a diagnostic or placing new students in ESLStudeo, for example "turn these photos of our paper test into a placement test", "make a placement test for adults from A1 to B2", "send the placement test to these twenty people", "who has finished the placement test?" or "place Sara at Intermediate".
 ---
 
 # Placement tests in ESLStudeo
@@ -9,8 +9,11 @@ A placement test answers one question: what level is this person, on evidence. I
 achievement test. A question is good if it separates two levels, and useless if everybody gets it
 right, however well it is written.
 
-Before anything else, call `what_can_this_builder_do` with part "placement": it gives the exact format
-of parts, questions, score rules, levels and settings, and the evidence rules the engine applies.
+Before anything else:
+- `what_can_this_builder_do` with part "placement": the exact format of parts, questions, score rules,
+  levels and settings, and the evidence rules the engine applies.
+- `design_approaches` with approach "placement-and-diagnostics": how to work with the teacher, and the
+  measurement principles behind the rules below.
 
 ## Who may do what
 
@@ -22,24 +25,62 @@ of parts, questions, score rules, levels and settings, and the evidence rules th
 - A test bought from the marketplace keeps its questions, levels and score rules locked, because its
   levels are tuned to exactly those questions. Its name, settings and delivery are the buyer's.
 
-## Build from a paper test (photos or a document)
+## Which kind of request is this?
 
-1. Read every page. Transcribe the questions and their order faithfully; do not improve them silently.
-2. Find the answer key. If it is not in the photos, ask for it; never guess a key.
-3. Ask for the scoring chart: which levels the test places into, and at what scores. If the paper test
-   has none, say that the cut-offs will have to be set and checked (see below), rather than inventing
-   them as if they were known.
-4. Tag every question with its CEFR band (`cefr`), from its own difficulty — how frequent its words are
-   and how complex its structure — not from the part's average. Say which tags you are unsure of.
-5. Point out, without changing anything, the questions that break the rules below (an absurd option,
-   the answer always the longest option, a band with fewer than six questions), and ask which to fix.
-6. Build it: `create_placement_test`, then `set_placement_levels` (levels lowest first, each with its
-   CEFR band), then one `set_placement_section` per part, then `read_placement_test` to see the problems
-   left, then `publish_placement_test`.
-7. Pictures and recordings in the paper test come in through `upload_placement_media` from a web
-   address — see "Pictures and recordings" below.
+- **"Put our test online"** — the teacher has a paper test that works and wants the same test on the
+  platform. Keep it simple: follow "Replicate a paper test" below. Do not walk them through the
+  engine's options; work out the settings that reproduce their test and put them up for approval.
+- **"Make us a placement test"** — there is no paper test, or the teacher wants a new one. Follow
+  "Design a new test" below, and show them what the engine can do so they can choose.
 
-## Build a new test from a brief
+## Replicate a paper test (photos or a document)
+
+1. Say briefly what the online test will do — two or three sentences, not a tour: each candidate opens
+   their own link on a phone or a computer; ESLStudeo asks the questions in the paper's order, marks
+   them, and reads the score against the chart; the teacher sees every result with the level the
+   questions suggest, and confirms it.
+2. Read every page. Transcribe the questions and their order faithfully; do not improve them silently.
+3. Ask only what the paper does not tell you: the answer key (never guess one), the score chart —
+   which levels, at what scores — and the names of the levels. If the paper test has no chart, say that
+   the cut-offs will have to be set and checked, rather than inventing them as if they were known.
+4. Work out the settings that reproduce the paper test, and put them to the teacher as a short list to
+   approve:
+   - every part in the paper's order, every question kept, nothing drawn at random;
+   - one chart at the end, read on the running total of the whole test (`gateBasis` "cumulative"); each
+     earlier part simply sends the candidate on;
+   - the paper's time limit, or untimed;
+   - the plays the listening instructions allow (two unless the paper says otherwise);
+   - a support language only if the paper's own instructions have one;
+   - the spoken interview and the writing task only if the paper has them;
+   - adaptive off and the confirmation questions off, so a candidate answers exactly the paper's
+     questions;
+   - candidates do not see their level: each result waits for the teacher's decision;
+   - links last seven days, and each works once.
+
+   Add one line: any of this can be changed later, and one batch of links can be sent out with its own
+   time limit, plays and support language without changing the test.
+5. Turn the chart into score rules. A rule places a candidate at or below a percentage, so convert each
+   cut-off to a percentage of the test's total points, and set the value half a point above the band's
+   top score, so that no whole score lands on the wrong side: a level whose top score is 15 out of 60
+   becomes `upTo` (15 + 0.5) ÷ 60 × 100 = 25.8. The last rule must be 100. Check first that the online
+   total matches the paper's total: `read_placement_test` gives `totalPoints` and the points of each
+   part, and a matching question scores one point per pair, a gap-fill one point per gap.
+6. Tag every question with its CEFR band (`cefr`), from its own difficulty — how frequent its words are
+   and how complex its structure — and map each level to a band (`levelCefr`), so ESLStudeo can report
+   what a candidate can do and can flag a result its own evidence disagrees with (see "What the engine
+   adds to the chart"). Say which tags you are unsure of. If the teacher's levels do not correspond to
+   CEFR bands, leave the mapping out: the chart alone then decides.
+7. Build it: `create_placement_test`, then `set_placement_levels` (levels lowest first), then one
+   `set_placement_section` per part, then `read_placement_test` to see the problems left, then
+   `publish_placement_test`.
+8. Keep the review light. Say plainly when something cannot work — a key that contradicts its question,
+   two right options, a missing picture or recording, a level whose band has fewer than six questions —
+   and ask what to do about it. Do not redesign their test, or list what you would have done
+   differently, unless they ask.
+9. Pictures and recordings from the paper come in through `upload_placement_media` — see "Pictures and
+   recordings" below.
+
+## Design a new test
 
 Decide five things with the person before writing a question:
 1. **Floor and ceiling**, from who takes the test, not from ambition: a group of beginners needs
@@ -53,6 +94,12 @@ Decide five things with the person before writing a question:
    instructions that the later parts are meant to be hard, so they keep going.
 5. **What the test does not measure**, stated in "About this test" (`update_placement_test`). A test
    taken at home cannot guarantee a recording plays; a spoken answer is collected, never scored.
+
+Show them what the engine can do, in plain words, and say what you would choose: parts in a fixed
+order, or adaptive questions chosen as the candidate answers; extra questions at the deciding level
+when the evidence is thin; a time limit, and how many times a recording may be played; a first
+language beside the instructions; read-aloud for young children; a spoken interview, or a written
+task after the questions; whether a candidate is told their own level; how many days a link lasts.
 
 Then write the questions easiest first:
 - Three options, all plausible and from the same category; the right answer is never the longest
@@ -76,6 +123,16 @@ Then write the questions easiest first:
   (Placement → the test), which simulates hundreds of sittings, before relying on it.
 - `set_placement_levels` refuses to remove or rename a level that a score rule or a prompt still
   names; change those first.
+
+### What the engine adds to the chart
+
+Once every level has a CEFR band and the questions are tagged, ESLStudeo checks the chart's answer
+against the candidate's performance on the questions of that band itself. It moves the result one level
+down when at least ten questions of the awarded level's band were answered and fewer than two thirds
+were right, and one level up when a higher level's own band was mastered and the total was within one
+standard error of that level's cut-off. Either way the result is flagged for the teacher, beside the
+chart's own answer, and the teacher decides. With the confirmation setting on, the engine serves a few
+more questions at the deciding band before it settles a result the sitting has not evidenced.
 
 ## Pictures and recordings
 
@@ -102,6 +159,10 @@ ESLStudeo's generated pictures and voices are made on the ESLStudeo screen, not 
    - `showLevel`: whether each candidate sees their level at the end. Off by default: the teacher
      decides each level from the results. Never offered for the Children test, whose level is never
      shown to a child or a parent, nor with the interview.
+   - This batch's own conditions, when they differ from the test's: `timeLimitMin` (0 for untimed),
+     `audioPlays` (0 for as many as they like), `supportLang` ("fr", "ar", or "" for English only) and
+     `readAloud`. They apply to these links alone and change nothing in the test — for an invigilated
+     room, a candidate who needs longer, or a group who share a first language.
 4. `create_placement_links` makes one link per person (up to 200 at a time).
 5. Offer one email per candidate. When the person's email is connected to Claude and can save drafts
    (Gmail's can), write one draft per candidate, addressed to that person alone, with their own link,

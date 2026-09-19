@@ -4,10 +4,12 @@ The ESLStudeo plugin lets you build courses and run classes in [ESLStudeo](https
 talking to Claude. ESLStudeo is a platform for building courses and teaching classes, in any subject.
 
 With the plugin, Claude can:
-- plan and build a course, a unit, a lesson, a quiz or homework, in small steps you can see in
-  ESLStudeo as it grows;
-- turn a paper placement test (photos or a document) into an online one, following the rules that
-  keep a level trustworthy, and send each candidate their own single-use link, with an email draft per
+- design a course with Claude as an expert colleague: it asks the questions that change the design,
+  recommends an approach, agrees an outline with you, then builds one unit at a time, in small steps
+  you can see in ESLStudeo as it grows;
+- turn a paper placement test (photos or a document) into an online one — it works out the settings
+  that reproduce your test and asks you to approve them — following the rules that keep a level
+  trustworthy, and send each candidate their own single-use link, with an email draft per
   person; then read the results and record the level you decide;
 - bring in pictures, recordings and videos from a Google Drive folder;
 - find and change wording across a course, rename, reorder, copy, hide and remove things, and put a
@@ -55,7 +57,7 @@ You need an ESLStudeo account ([eslstudeo.com](https://eslstudeo.com)).
 
 | Permission | What Claude may do | Granted |
 |---|---|---|
-| See courses | Read the courses and placement tests you may edit, and everything written in them | When you press Allow |
+| See courses | Read the courses and placement tests you may edit, everything written in them, and ESLStudeo’s design approaches | When you press Allow |
 | Change courses | Create courses and placement tests; write their sections, units, pages, exercises and questions; bring in pictures, documents, recordings and videos from a web address such as a Google Drive link | When you press Allow |
 | See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist; placement sittings and results | Only if you switch on **Also let it into your classes** |
 | Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo; create placement links and record levels | Only if you switch on **Also let it into your classes** |
