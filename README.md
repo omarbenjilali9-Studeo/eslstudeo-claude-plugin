@@ -6,6 +6,10 @@ talking to Claude. ESLStudeo is a platform for building courses and teaching cla
 With the plugin, Claude can:
 - plan and build a course, a unit, a lesson, a quiz or homework, in small steps you can see in
   ESLStudeo as it grows;
+- turn a paper placement test (photos or a document) into an online one, following the rules that
+  keep a level trustworthy, and send each candidate their own single-use link, with an email draft per
+  person; then read the results and record the level you decide;
+- bring in pictures, recordings and videos from a Google Drive folder;
 - find and change wording across a course, rename, reorder, copy, hide and remove things, and put a
   course back to an earlier version;
 - review a course's quality page by page and propose exact fixes;
@@ -22,8 +26,9 @@ With the plugin, Claude can:
 
 - **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). You approve it on an ESLStudeo page;
   your password never reaches Claude.
-- **Six skills**, the instructions Claude reads when a task needs them: `build-a-course`,
-  `edit-a-course`, `review-a-course`, `run-a-class`, `mark-and-reply` and `connect-eslstudeo`.
+- **Seven skills**, the instructions Claude reads when a task needs them: `build-a-course`,
+  `edit-a-course`, `review-a-course`, `placement-tests`, `run-a-class`, `mark-and-reply` and
+  `connect-eslstudeo`.
 
 The plugin itself is in [`plugins/eslstudeo`](plugins/eslstudeo).
 
@@ -50,10 +55,10 @@ You need an ESLStudeo account ([eslstudeo.com](https://eslstudeo.com)).
 
 | Permission | What Claude may do | Granted |
 |---|---|---|
-| See courses | Read the courses you may edit, and everything written in them | When you press Allow |
-| Change courses | Create courses; write sections, units, pages and exercises; upload pictures and documents | When you press Allow |
-| See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist | Only if you switch on **Also let it into your classes** |
-| Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo | Only if you switch on **Also let it into your classes** |
+| See courses | Read the courses and placement tests you may edit, and everything written in them | When you press Allow |
+| Change courses | Create courses and placement tests; write their sections, units, pages, exercises and questions; bring in pictures, documents, recordings and videos from a web address such as a Google Drive link | When you press Allow |
+| See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist; placement sittings and results | Only if you switch on **Also let it into your classes** |
+| Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo; create placement links and record levels | Only if you switch on **Also let it into your classes** |
 
 - Claude acts only as you, and only in courses and classes you can already reach in ESLStudeo, under
   the same rules as ESLStudeo's own screens.

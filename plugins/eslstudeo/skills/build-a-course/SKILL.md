@@ -57,14 +57,15 @@ agrees or adjusts it. For a single page or a single unit, a short plan in one me
   an id.
 - A refused write comes back with the reason. Fix exactly what it names and try again. Never work
   around a refusal, for example by pasting an exercise into the page's content as plain text.
-- Pictures, recordings and documents must be stored in ESLStudeo. Upload them first, with
+- Pictures, recordings, videos and documents must be stored in ESLStudeo. Bring them in first, with
   `upload_image` for a picture (up to 6 MB) or `upload_file` for a document or a recording (up to
-  20 MB), then use the address that comes back. A link to another website is removed when the course
-  is saved. A video is uploaded by the person in the Course builder itself. Use only pictures the
-  person supplied or has the right to use.
+  20 MB) or a video (up to 300 MB), then use the address that comes back — a video in the page's
+  `video` field, a recording in its `audio` field. A link to another website is removed when the
+  course is saved. Use only pictures the person supplied or has the right to use. How files get to you:
+  see "Pictures, recordings and videos" below.
 - A page with `hidden` set to 1 is a draft: learners never see it; staff see it, marked as hidden.
-- Dates belong to classes. Leave opening dates and deadlines off the course; the person sets them for
-  each class in ESLStudeo, under **My classes**.
+- Dates belong to classes. Leave opening dates and deadlines off the course; they are set for each
+  class with `set_unit_dates` (the run-a-class skill) or in ESLStudeo, under **My classes**.
 - If ESLStudeo answers that somebody else is editing the course, wait a moment, read the course
   again, and repeat the one change.
 
@@ -94,3 +95,23 @@ homework, test, diagnostic), what the course calls a unit, its home page, or its
 Report in a few lines: what was built (sections, units, pages), what `check_course` said, the builder
 link, and what the person should look at first. Do not paste the content back into the chat unless
 the person asks for it.
+
+## Pictures, recordings and videos
+
+You cannot pass on a file the person dropped into the chat: files reach ESLStudeo by their web
+address, and ESLStudeo downloads them. As soon as a course needs media, suggest the Google Drive way:
+1. The person puts the files in one Google Drive folder, named clearly (for example
+   "unit2-dialogue1.mp3", "unit2-hotel-lobby.jpg"), and shares the folder with "Anyone with the link"
+   as Viewer.
+2. They connect Google Drive to Claude (Customize → Connectors → Google Drive). In ChatGPT, its own
+   Google Drive connection does the same.
+3. List the folder with the Google Drive connection, and bring in all the files or the ones the person
+   names: `upload_image` or `upload_file` with each file's Drive link. A link can also be written from
+   the file's id as https://drive.google.com/open?id=THE_ID. A Google Docs, Slides or Sheets file
+   arrives as a PDF or a spreadsheet.
+4. You can look at pictures and read documents to decide where they go. You cannot listen to a
+   recording or watch a video, so place those by their file names, and say so.
+5. ESLStudeo keeps its own copy, so the folder's sharing can be switched off afterwards.
+
+Without Drive, a file can come from any public web address, or the person uploads it in the Course
+builder. ESLStudeo's generated pictures and voices are made on the ESLStudeo screen, not through Claude.
