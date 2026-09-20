@@ -112,6 +112,34 @@ Then write the questions easiest first:
 - A candidate reaches a band when they get about two thirds of its questions right, with the bands
   below it also at two thirds.
 
+## Check it, then let the teacher decide
+
+`check_placement_test` looks at a finished test through a candidate's eyes and names what would go wrong:
+a question whose options cannot be answered as written; a key that is always the longest, or always in
+the same place; a level with too little evidence behind it; a score chart with a hole; a description
+promising a skill nothing measures; a passage far from its band's usual length; a clock too fast for the
+number of questions. Run it when a test is built, and again after a batch of edits.
+
+- **It advises; it does not gate.** Nothing is changed and nothing is refused: the test still publishes
+  and still goes out. Put a finding in terms of the person sitting the test — what a candidate could do
+  without reading, what a level would rest on — then let the teacher choose. A teacher who says no gets
+  the test they asked for, and the matter is closed.
+- **Ask what standard they place people by** — their own chart and level names, the CEFR, or nothing
+  formal. All three are legitimate. Say once that the checks and the CEFR mapping are available, then
+  work the way they want to work.
+- **It does not judge everything.** Nothing it reports touches whether the content is accurate, up to
+  date, fair or worth asking — a person reads for that, and a real sitting shows the rest. Tell the
+  teacher what was looked at, so a quiet report is not mistaken for a clean bill of health.
+
+## What a level means, in CEFR words
+
+`cefr_bands` holds the can-do statements ESLStudeo prints its reports from. Use them to draft "What each
+level means" — then check the draft against the test itself: which skills its parts cover, how many
+questions sit at each band, whether writing or speaking is collected at all. Where the words go further than the test
+does, say so plainly and put two roads in front of the teacher: build the missing questions, or describe
+the level by what this test really shows and name the gap. A can-do statement is never pasted in as a
+description on its own.
+
 ## Score rules and levels
 
 - Each part's `gate` lists score rules, lowest first: a candidate at or below `upTo` percent is placed

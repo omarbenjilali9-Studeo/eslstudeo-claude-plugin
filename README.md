@@ -10,8 +10,9 @@ With the plugin, Claude can:
 - teach a class that holds several levels from one course: an easy layer and a challenge layer beside
   the core path, served to each learner by what they get right;
 - turn a paper placement test (photos or a document) into an online one — it works out the settings
-  that reproduce your test and asks you to approve them — following the rules that keep a level
-  trustworthy, and send each candidate their own single-use link, with an email draft per
+  that reproduce your test and asks you to approve them — then check what it would do to the people who take it — the options a candidate could
+  exploit, the evidence behind each level, and the vocabulary against a CEFR profile — as advice you are
+  free to ignore, and send each candidate their own single-use link, with an email draft per
   person; then read the results and record the level you decide;
 - bring in pictures, recordings and videos from a Google Drive folder;
 - find and change wording across a course, rename, reorder, copy, hide and remove things, and put a

@@ -14,7 +14,8 @@ skill first.
 1. Ask in one line what the course is for and who its learners are, unless the course itself says.
    Call `design_approaches` and read the approach closest to the course: a review judges a course
    against what it is trying to do, not against a fixed idea of a good course.
-2. Run `check_course`: the problems ESLStudeo itself detects. Note them.
+2. Run `check_course`: the problems ESLStudeo itself detects. Note them. For a placement test, the
+   equivalent is `check_placement_test` (the placement-tests skill) — advice, never a verdict.
 3. Read what is in scope: `read_course`, then `read_unit` for each unit, then `read_page` for every
    page. Judge the words and the items as authored, never a summary of them.
 4. Check each page against `references/checklist.md`.

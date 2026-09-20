@@ -4,7 +4,7 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 65 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 67 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
 - **Seven skills.** A skill is a set of instructions that Claude reads when a task needs it.
