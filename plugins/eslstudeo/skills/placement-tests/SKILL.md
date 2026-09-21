@@ -186,7 +186,9 @@ ESLStudeo's generated pictures and voices are made on the ESLStudeo screen, not 
    - `days`: how long the links last, 1 to 30 (7 unless they say otherwise); each link works once.
    - `showLevel`: whether each candidate sees their level at the end. Off by default: the teacher
      decides each level from the results. Never offered for the Children test, whose level is never
-     shown to a child or a parent, nor with the interview.
+     shown to a child or a parent, nor with the interview. Say what it costs before they choose it: with
+     the level shown, candidates are not asked for the writing, and the suggested level becomes final
+     without the teacher's decision. A teacher who reads the writing to check a level should leave it off.
    - This batch's own conditions, when they differ from the test's: `timeLimitMin` (0 for untimed),
      `audioPlays` (0 for as many as they like), `supportLang` ("fr", "ar", or "" for English only) and
      `readAloud`. They apply to these links alone and change nothing in the test — for an invigilated
@@ -209,3 +211,11 @@ ESLStudeo's generated pictures and voices are made on the ESLStudeo screen, not 
   only the level the teacher chose, one of the test's own levels, with their note.
 - A borderline result, a sitting with very fast answers, or a level that disagrees with the teacher's
   impression is worth a short spoken check before deciding; say so rather than deciding for them.
+
+## Deleting a test
+
+`delete_placement_test` removes a test for good, with its unused links and its previews. Name the test
+and get a clear yes first; it cannot be undone. It is refused when a candidate has sat the test, because
+their result depends on it (offer `publish_placement_test` with `publish` false instead, which stops it
+being delivered), when the test is listed on the marketplace, and when it is a copy the teacher bought.
+A draft left over from trying things out is the usual case.
