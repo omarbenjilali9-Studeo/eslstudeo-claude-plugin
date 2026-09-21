@@ -4,7 +4,7 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 68 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 71 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
 - **Seven skills.** A skill is a set of instructions that Claude reads when a task needs it.
@@ -70,7 +70,7 @@ ESLStudeo keeps its own copy, so you can stop sharing afterwards.
 Whatever Claude reads from ESLStudeo is sent to Anthropic and handled under Anthropic's terms. With the
 class permissions, this includes your learners' names, marks and email addresses. To build courses
 without sharing any learner information, leave **Also let it into your classes** off. On a connection
-that already has it, you can connect again with the switch off, or set the 27 class tools to
+that already has it, you can connect again with the switch off, or set the 30 class tools to
 **Blocked** in **Customize → Connectors → ESLStudeo → Tool permissions**.
 
 ## Ending the connection
