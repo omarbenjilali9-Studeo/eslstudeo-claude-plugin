@@ -186,15 +186,20 @@ what it does before making it: it stays open until its date (`days`), until `max
 started, or until it is closed (`set_open_placement_link`), and somebody already taking the test still
 finishes; the same email or phone carries on an unfinished sitting from any device and is told when the
 test was already taken; a device that already took it is not offered it again; the queue marks details
-the candidate typed and sittings that may be the same person twice, for the teacher to compare. It is
-written only, and never for the Children test. `open_placement_links` lists the links with how many
-people started and finished through each.
+the candidate typed and sittings that may be the same person twice, for the teacher to compare. The
+spoken interview can ride on it (`mode`): the browser asks each person for their microphone. Never for
+the Children test. `open_placement_links` lists the links with how many people started and finished
+through each.
 
 1. The test must be published.
 2. Collect the list: each person's name, and their email address when there is one; the age is
    required for the Children test.
 3. Show the person the list and the choices, and get a yes:
    - `days`: how long the links last, 1 to 30 (7 unless they say otherwise); each link works once.
+   - `mode`: written, or interview for the recorded spoken interview after the questions. An adult
+     consents by allowing the microphone when it starts. For the Children test the interview is refused
+     here: a child's recording needs the parent's consent, which the proctor ticks on the Placement
+     screen when making the link.
    - `showLevel`: whether each candidate sees their level at the end. Off by default: the teacher
      decides each level from the results. Never offered for the Children test, whose level is never
      shown to a child or a parent, nor with the interview. Say what it costs before they choose it: with
