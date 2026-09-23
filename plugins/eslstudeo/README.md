@@ -36,6 +36,9 @@ Build courses and run classes in ESLStudeo by talking to Claude.
    classes** (it starts off). Then press **Allow**.
 3. If you had already added ESLStudeo as a connector by hand, remove that one, so that only one
    ESLStudeo connection remains.
+4. If your account has several workspaces (your own, and one per organization you belong to), the
+   connection works in the workspace you were in when you pressed **Allow**. To work in another
+   one, switch to it in ESLStudeo, then disconnect and connect again.
 
 Then ask, for example: "Make a six-unit course for my Saturday group", "Who hasn't finished
 Unit 2?", "Give Sara a resit of the mid-term" or "Mark the welcome emails from Unit 2". You can also type `/` to pick a skill by name.

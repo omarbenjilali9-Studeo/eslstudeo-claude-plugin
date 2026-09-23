@@ -31,6 +31,13 @@ ESLStudeo.
    The connection was ended in ESLStudeo, or the account changed. Connect again. An account that is
    not active must be restored in ESLStudeo first; in an organization, the head of the organization
    does that.
+6. **The connection belongs to one workspace.** An ESLStudeo account can have several workspaces:
+   the person's own, and one for each organization they belong to. The connection works in the
+   workspace the person was in when they pressed **Allow**: `list_my_courses` lists that workspace's
+   courses and nothing from the others, and a course or class Claude creates lands there. To work in
+   another workspace, the person switches to it in ESLStudeo (the ▾ beside the name at the top of the
+   sidebar), disconnects ESLStudeo in **Customize → Connectors**, and connects again from there. When
+   the person asks why a course is missing, ask which workspace it is in.
 
 ## 2. The four permissions
 
