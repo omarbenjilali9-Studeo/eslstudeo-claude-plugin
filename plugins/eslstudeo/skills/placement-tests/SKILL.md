@@ -181,7 +181,9 @@ ESLStudeo's generated pictures and voices are made on the ESLStudeo screen, not 
 
 Two ways. With a **list** of candidates, one link each (below). With **no list** — a poster, a website,
 a message group — one **open link** for everybody: `create_open_placement_link` makes it, and each person
-who opens it types their name and their email or phone, then takes the test on their own sitting. Say
+who opens it types their name and their email or phone, then takes the test on their own sitting.
+`candidateTitle` sets what they read as the test's title on that first page (the test's own name
+otherwise); `label` is only the teacher's own name for the link. Say
 what it does before making it: it stays open until its date (`days`), until `maxSittings` people have
 started, or until it is closed (`set_open_placement_link`), and somebody already taking the test still
 finishes; the same email or phone carries on an unfinished sitting from any device and is told when the
