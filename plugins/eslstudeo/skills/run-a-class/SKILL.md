@@ -28,7 +28,8 @@ Call `list_my_courses`, then `list_classes` for the course. A course can have se
 the person's words fit more than one class, ask which. Without a class id, the reading tools cover
 every class of the course that the person may see. Before changing a class, read it with
 `class_details`: its name, dates, whether it has ended, joining and its class code, the class board,
-the grade weighting and the certificate rule.
+the grade weighting, the certificate rule, and how its units are delivered where that differs from the
+course.
 
 ## Create a class
 
@@ -42,9 +43,10 @@ open ESLStudeo, choose **Join a class** and type the code.
 - `update_class` changes only what is sent: `title`, `startsAt` and `endsAt`, `joining` ("open" or
   "closed": whether new learners can join with the class code), `classBoard` (true lets the class's
   learners see each other's names and progress), `continuousShare` (0 to 100: the final grade becomes
-  continuous work × that share + the exam × the rest; null goes back to one pooled score) and
-  `certificate` (this class's own certificate conditions, or null for the course's). Say what will
-  change before changing it, and read the result back.
+  continuous work × that share + the exam × the rest; null goes back to one pooled score),
+  `certificate` (this class's own certificate conditions, or null for the course's) and `delivery`
+  (how this class's units are delivered, below). Say what will change before changing it, and read the
+  result back.
 - `end_class` ends a class: its learners lose access to the course, joining closes, and every record,
   mark and certificate is kept. It refuses unless `confirm` is the word "end". Ask first, naming the
   class and how many learners it has.
@@ -56,6 +58,14 @@ open ESLStudeo, choose **Join a class** and type the code.
 The course sets the rules for every class (whether a unit waits for the previous one, its number of
 attempts, exam mode); changing them with `set_unit_delivery` (the edit-a-course skill) changes every
 class. For one class, or for particular learners, use these instead:
+- `update_class` with `delivery` changes, for THIS class only, five of the course's settings for every
+  unit: `order` ("wait": each unit waits until the previous one is finished; "open": none waits),
+  `mode` ("sequence": pages open one after another; "free"), `feedback` ("check": right or wrong at
+  each Check; "end": at the end of the unit; "none": never shown), `back` ("allowed" or "locked": no
+  going back to an earlier page) and `time` ("none": no time limits; "1.25", "1.5" or "2": the course's
+  limits multiplied). Send only the keys to change; "course" puts one back to the course's setting,
+  and `delivery: null` all of them. Exam units always keep the course's settings. The class's teacher
+  or a manager of the course may change it; `class_details` reads it back in words.
 - `unit_access` shows, for each unit and each learner, whether it is finished, open or locked and
   why, and the exceptions already made. With `classId`, it also gives the class's own dates. Read it
   before changing access, and narrow it with `unitId` or `studentId` when the class is large.
