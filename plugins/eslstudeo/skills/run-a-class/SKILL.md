@@ -58,12 +58,13 @@ open ESLStudeo, choose **Join a class** and type the code.
 The course sets the rules for every class (whether a unit waits for the previous one, its number of
 attempts, exam mode); changing them with `set_unit_delivery` (the edit-a-course skill) changes every
 class. For one class, or for particular learners, use these instead:
-- `update_class` with `delivery` changes, for THIS class only, five of the course's settings for every
+- `update_class` with `delivery` changes, for THIS class only, six of the course's settings for every
   unit: `order` ("wait": each unit waits until the previous one is finished; "open": none waits),
   `mode` ("sequence": pages open one after another; "free"), `feedback` ("check": right or wrong at
   each Check; "end": at the end of the unit; "none": never shown), `back` ("allowed" or "locked": no
-  going back to an earlier page) and `time` ("none": no time limits; "1.25", "1.5" or "2": the course's
-  limits multiplied). Send only the keys to change; "course" puts one back to the course's setting,
+  going back to an earlier page), `time` ("none": no time limits; "1.25", "1.5" or "2": the course's
+  limits multiplied) and `finish` ("list": name what is missing, then let them finish; "complete":
+  only when every piece of work is handed in; "direct": at once). Send only the keys to change; "course" puts one back to the course's setting,
   and `delivery: null` all of them. Exam units always keep the course's settings. The class's teacher
   or a manager of the course may change it; `class_details` reads it back in words.
 - `unit_access` shows, for each unit and each learner, whether it is finished, open or locked and

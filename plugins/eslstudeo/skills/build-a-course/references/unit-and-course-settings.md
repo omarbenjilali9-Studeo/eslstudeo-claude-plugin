@@ -20,6 +20,12 @@ This file says which to choose.
   nothing, and it never runs on a unit whose `feedback` is "none". See "One class, several levels"
   in `references/page-design.md`.
 - `requiresPrev` 1 keeps a unit locked until the previous unit is finished.
+- `finish` says what the Finish button does. "list" (the usual case) names the pieces of work with no
+  answer yet and lets the learner finish anyway; "complete" refuses to finish until every piece is
+  handed in, which suits homework that must be done in full (a timed unit still finishes when its time
+  runs out, and with `lockBack` 1 each page is checked before Next); "direct" finishes at once, for a
+  unit where skipping is expected. A piece a learner cannot do alone (a recorded role-play on a device
+  without a microphone, a pair activity) would hold a "complete" unit up, so say so before choosing it.
 - A class, or a single learner, can be given a different number of attempts, and a learner who has
   sat an exam can be given a resit (`set_unit_access`, in the run-a-class skill). That number wins
   over the unit's setting.
