@@ -109,6 +109,14 @@ only if the teacher asks you to.
    key.
 7. At the end, run `check_course`. Fix every problem it lists, run it again, and report the result
    with the builder link.
+8. Then two readings that advise rather than refuse: `check_course_level`, with the band the course
+   is meant for, measures the words of each unit against the published word lists and names the
+   words above that band; `advise_course` lists what each unit lacks against its approach. Tell the
+   person the findings that matter, in a line each, and change a page only when they agree — a name
+   is not in the lists, a page may teach the very word it uses, and a course may be right to differ
+   from its approach. When a scene or a reading is to be recorded, read `design_approaches` with the
+   topic "writing-for-recording" before writing it; to show the person a finished example, or to
+   offer one instead of building, read it with the topic "examples".
 
 ## Rules ESLStudeo enforces
 
@@ -154,7 +162,8 @@ homework, test, diagnostic), what the course calls a unit, its home page, or its
 
 ## Finish
 
-Report in a few lines: what was built (sections, units, pages), what `check_course` said, the builder
+Report in a few lines: what was built (sections, units, pages), what `check_course` said, what
+`check_course_level` and `advise_course` suggested (a line each, only what matters), the builder
 link, and what the person should look at first. Do not paste the content back into the chat unless
 the person asks for it.
 
