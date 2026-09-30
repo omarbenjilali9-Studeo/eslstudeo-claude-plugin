@@ -29,11 +29,32 @@ If the ESLStudeo tools are missing, follow the connect-eslstudeo skill first.
 | Tier a whole unit (differentiation) | `update_unit` with `tier` | "easy", "core" or "challenge"; empty for core. A page or a single exercise can carry its own, and no tier does anything until `set_unit_delivery` turns `adaptive` on |
 | Reorder | `move_item` | Positions count from 1; moving a unit renumbers the others |
 | Make a unit like an existing one | `duplicate_item`, then edit the copy | The copy gets new ids; learners' work stays with the original |
+| Bring in a unit, page or section from another course, or an exam | `copy_into_course` (find the exam with `list_exams`, look at it with `read_exam`) | The copy starts fresh; see "Copying in from another course or an exam" below |
 | Remove something | `delete_item` | Learners' work on it is lost: ask first |
 | Undo | `list_versions`, then `restore_version` | Everything since that version is undone; the version replaced is kept |
 | Change how an open question is marked | `set_marking_guidance` | Out of what, criteria, bands, a model answer |
 | Change attempts, order, results or exam mode | `set_unit_delivery` | For every class. Dates, and exceptions for one class or learner, belong to the class: `set_unit_dates` and `set_unit_access` (run-a-class); one class's own order, results, going back and time limits: `update_class` with `delivery` (run-a-class) |
 | Change the unit word, home page or certificate | `set_course_settings` | |
+
+## Copying in from another course or an exam
+
+`copy_into_course` does what the builder's "From another course" window does. Use it when the person already has the
+material: a unit in last year's course, a page in another course, or their exams.
+
+1. Find the source. `list_my_courses` and `read_course` for a course; `list_exams` for an exam, then `read_exam` to
+   see its pages and how its open questions are marked. Only courses the person builds and their own exams can be
+   copied: a course that is only licensed to their school, or an exam shared with them only to deliver, cannot.
+2. Say where it goes. A unit needs `toSectionId` (and `book`, "student" or "workbook", in a section split into two
+   books); a page needs `toUnitId`; `position` counts from 1, and without it the copy goes last.
+3. Copy it. The copy gets new ids, so no learner's work, dates or posts come with it; links between its own pages
+   follow it, links to pages outside it are dropped; pictures and recordings are shared; each open question keeps its
+   marking guidance.
+4. Put an exam between units the way a teacher expects. An exam arrives as one unit in exam mode (one sitting, pages in
+   order). Give it a `title` and `untagged` true so the units around it keep their numbers. Then ask how it should
+   behave and use `set_unit_delivery`: for example results never shown (`feedback` "none") and `requiresPrev` so it
+   opens only when the unit before it is finished. Tell the person that the unit after it now waits for the exam,
+   because that unit waits for whatever comes before it.
+5. Say what was copied and where, with the new unit's name as the learners will see it.
 
 ## Three changes need the person's explicit yes
 

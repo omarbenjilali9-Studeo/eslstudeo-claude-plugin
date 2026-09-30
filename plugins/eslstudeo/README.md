@@ -4,7 +4,7 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 73 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 76 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
 - **Seven skills.** A skill is a set of instructions that Claude reads when a task needs it.
@@ -12,7 +12,7 @@ Build courses and run classes in ESLStudeo by talking to Claude.
     change the design, a recommended approach, an outline you agree, then unit by unit in the
     ESLStudeo house style.
   - **edit-a-course**: finds and changes wording, renames, moves, copies, hides, removes, and undoes
-    changes.
+    changes; copies units, pages and exams in from your other courses.
   - **review-a-course**: checks a course's quality page by page and proposes exact fixes.
   - **run-a-class**: creates and changes classes; sets a class's unit dates, access, attempts and
     exam resits; adds, moves or removes learners; reports how a class and each learner are getting

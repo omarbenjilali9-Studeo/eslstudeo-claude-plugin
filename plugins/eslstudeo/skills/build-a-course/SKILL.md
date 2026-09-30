@@ -48,7 +48,7 @@ so the teacher can answer in a line:
 - the goal: an exam, a job, a syllabus, everyday use;
 - the time: how many weeks, sessions a week, minutes a session; in class, at home, or both;
 - the setting: the country, the institution, what the learners already use;
-- the material the teacher already has: a textbook, a syllabus, past exam papers, pictures, recordings;
+- the material the teacher already has: a textbook, a syllabus, past exam papers, pictures, recordings, and units or exams already in ESLStudeo (`list_exams`, `copy_into_course`: copy those in rather than rewriting them);
 - how learning will be assessed;
 - whether the learners share a language that can support them.
 
