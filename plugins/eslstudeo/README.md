@@ -4,10 +4,10 @@ Build courses and run classes in ESLStudeo by talking to Claude.
 
 ## What the plugin contains
 
-- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 76 tools, under
+- **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). It gives Claude the same 81 tools, under
   the same four permissions, as adding the connector by hand. You approve it on an ESLStudeo page, and
   your password never reaches Claude.
-- **Seven skills.** A skill is a set of instructions that Claude reads when a task needs it.
+- **Eight skills.** A skill is a set of instructions that Claude reads when a task needs it.
   - **build-a-course**: designs and builds courses with you as an expert would — the questions that
     change the design, a recommended approach, an outline you agree, then unit by unit in the
     ESLStudeo house style.
@@ -26,6 +26,10 @@ Build courses and run classes in ESLStudeo by talking to Claude.
   - **mark-and-reply**: proposes marks and feedback from each question's criteria and saves the ones
     you confirm; answers discussion posts, hides or pins them; reads and answers what learners write
     with **Message my teacher**.
+  - **classroom-activities**: makes one activity for a lesson in your own Classroom Activities: a
+    printable board game, speaking cards and other types, or a spinning wheel of discussion topics
+    for the classroom screen; adds a ready file from a Google Drive link; and files activities in
+    your folders.
   - **connect-eslstudeo**: connecting, the four permissions, what is shared, and ending the connection.
 
 ## Install
@@ -47,8 +51,8 @@ Unit 2?", "Give Sara a resit of the mid-term" or "Mark the welcome emails from U
 
 | Permission | What Claude may do | Granted |
 |---|---|---|
-| See courses | Read the courses and placement tests you may edit, everything written in them, and ESLStudeo’s design approaches | When you press Allow |
-| Change courses | Create courses and placement tests; write their sections, units, pages, exercises and questions; bring in pictures, documents, recordings and videos from a web address such as a Google Drive link | When you press Allow |
+| See courses | Read the courses and placement tests you may edit, everything written in them, your own Classroom Activities, and ESLStudeo’s design approaches | When you press Allow |
+| Change courses | Create courses and placement tests; write their sections, units, pages, exercises and questions; bring in pictures, documents, recordings and videos from a web address such as a Google Drive link; make activities in your own Classroom Activities and add files to it | When you press Allow |
 | See classes and learners | Read your classes and learners: names, marks, written work and messages, what each learner has and has not done, and email addresses where they exist; placement sittings and results | Only if you switch on **Also let it into your classes** |
 | Run classes | Create classes and change their dates and settings; open or close units, set attempts and resits; add, move or remove learners; mark work; answer posts and messages; write to learners inside ESLStudeo; create placement links and record levels | Only if you switch on **Also let it into your classes** |
 

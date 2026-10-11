@@ -15,6 +15,9 @@ With the plugin, Claude can:
   free to ignore, and send each candidate their own single-use link, with an email draft per
   person; then read the results and record the level you decide;
 - bring in pictures, recordings and videos from a Google Drive folder;
+- make one activity for a lesson in your own Classroom Activities: a printable board game, speaking
+  cards and other types, or a spinning wheel of discussion topics for the classroom screen; and add a
+  ready file to it from a Google Drive link;
 - find and change wording across a course, rename, reorder, copy, hide and remove things, and put a
   course back to an earlier version;
 - review a course's quality page by page and propose exact fixes;
@@ -31,9 +34,9 @@ With the plugin, Claude can:
 
 - **The ESLStudeo connector** (`https://eslstudeo.com/mcp`). You approve it on an ESLStudeo page;
   your password never reaches Claude.
-- **Seven skills**, the instructions Claude reads when a task needs them: `build-a-course`,
-  `edit-a-course`, `review-a-course`, `placement-tests`, `run-a-class`, `mark-and-reply` and
-  `connect-eslstudeo`.
+- **Eight skills**, the instructions Claude reads when a task needs them: `build-a-course`,
+  `edit-a-course`, `review-a-course`, `placement-tests`, `run-a-class`, `mark-and-reply`,
+  `classroom-activities` and `connect-eslstudeo`.
 
 The plugin itself is in [`plugins/eslstudeo`](plugins/eslstudeo).
 
