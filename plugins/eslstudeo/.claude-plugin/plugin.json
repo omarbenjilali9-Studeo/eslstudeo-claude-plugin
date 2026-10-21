@@ -1,0 +1,19 @@
+{
+  "name": "eslstudeo",
+  "displayName": "ESLStudeo",
+  "version": "2.0.0",
+  "description": "Connects Claude to ESLStudeo, where you build courses and placement tests, make classroom activities and run classes. ESLStudeo itself guides Claude through each task once you have signed in. Includes the ESLStudeo connector, which you approve on eslstudeo.com, and a short guide to the connection and its permissions.",
+  "author": {
+    "name": "ESLStudeo",
+    "url": "https://eslstudeo.com"
+  },
+  "homepage": "https://eslstudeo.com",
+  "keywords": [
+    "courses",
+    "teaching",
+    "classes",
+    "course builder",
+    "learning",
+    "education"
+  ]
+}

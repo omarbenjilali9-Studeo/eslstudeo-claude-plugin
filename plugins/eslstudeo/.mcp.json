@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "eslstudeo": {
+      "type": "http",
+      "url": "https://eslstudeo.com/mcp"
+    }
+  }
+}

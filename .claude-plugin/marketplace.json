@@ -1,0 +1,27 @@
+{
+  "name": "eslstudeo",
+  "owner": {
+    "name": "ESLStudeo"
+  },
+  "metadata": {
+    "description": "The ESLStudeo plugin for Claude: build courses and run classes in ESLStudeo by talking to Claude."
+  },
+  "plugins": [
+    {
+      "name": "eslstudeo",
+      "displayName": "ESLStudeo",
+      "source": "./plugins/eslstudeo",
+      "description": "Connects Claude to ESLStudeo, where you build courses and placement tests, make classroom activities and run classes. ESLStudeo itself guides Claude through each task once you have signed in. Includes the ESLStudeo connector, which you approve on eslstudeo.com, and a short guide to the connection and its permissions.",
+      "category": "education",
+      "homepage": "https://eslstudeo.com",
+      "keywords": [
+        "courses",
+        "teaching",
+        "classes",
+        "course builder",
+        "learning",
+        "education"
+      ]
+    }
+  ]
+}
